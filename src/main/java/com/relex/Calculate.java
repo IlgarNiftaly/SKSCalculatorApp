@@ -15,6 +15,13 @@ public class Calculate {
                 }
                 yield division(num1, num2);
             }
+            case '%' -> {
+                while(num2 == 0) {
+                    System.out.println("Xeta: 0-a bölmə mümkün deyil, yenidən daxil edin: ");
+                    num2 = scan.nextDouble();
+                }
+                yield percent(num1, num2);
+            }
             default -> {
                 System.out.println("Xeta: Verilənlər yanlış daxil edildi!");
                 yield 0;
@@ -36,6 +43,10 @@ public class Calculate {
 
     private double division(double num1, double num2){
         return num1 / num2;
+    }
+
+    private double percent(double num1, double num2){
+        return num1 % num2;
     }
 
 }
