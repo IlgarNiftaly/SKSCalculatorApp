@@ -9,6 +9,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         double result = 0;
         double num1 = scan.nextDouble();
+
         while(true){
             char operation = scan.next().charAt(0);
             if(operation == 'C' || operation == 'c'){
