@@ -70,7 +70,8 @@ public class App1 {
                 case "+" -> addition(num);
                 case "-" -> subtraction(num);
                 case "*" -> multiplication(num);
-                case "/" -> division(num); // Burada division metodunda try-catch var
+                case "/" -> division(num);
+                case "%" -> percent(num);
                 default -> {
                     System.out.println("Xeta: Verilenler yanlis daxil edildi!");
                     yield 0;
