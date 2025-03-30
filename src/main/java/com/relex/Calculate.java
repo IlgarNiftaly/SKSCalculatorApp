@@ -10,20 +10,20 @@ public class Calculate {
             case "*" -> multiplication(num1, num2);
             case "/" -> {
                 while (num2 == 0){
-                    System.out.println("Xeta: 0-a bölmə mümkün deyil, yenidən daxil edin: ");
+                    System.out.println("Xeta: 0-a bolme mumkun deyil, yeniden daxil edin: ");
                     num2 = scan.nextDouble();
                 }
                 yield division(num1, num2);
             }
             case "%" -> {
                 while(num2 == 0) {
-                    System.out.println("Xeta: 0-a bölmə mümkün deyil, yenidən daxil edin: ");
+                    System.out.println("Xeta: 0-a bolme mumkun deyil, yeniden daxil edin: ");
                     num2 = scan.nextDouble();
                 }
                 yield percent(num1, num2);
             }
             default -> {
-                System.out.println("Xeta: Verilənlər yanlış daxil edildi!");
+                System.out.println("Xeta: Verilenler yanlis daxil edildi!");
                 yield 0;
             }
         };

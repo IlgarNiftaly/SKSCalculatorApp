@@ -16,3 +16,21 @@ G.idea/sonarlint/issuestore/d/9/d9577083eb94db7b7544e84ce10de580693ccc40,e\3\e3
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+Q
+!src/main/java/com/relex/Test.java,f\5\f578b6a9dcf1b35106a0ab60756aad6d97fe9ead
+Q
+!src/main/java/com/relex/App1.java,a\3\a3a88a256afb98d65927d8a255b111c04f01f454
+Q
+!src/main/java/com/relex/App2.java,a\c\ac4dfd1ea4743ff2760b16ce8003415c2c4ac33e
+Å
+Q.idea/sonarlint/securityhotspotstore/0/7/07bb6179560591d86556023b41e99803ce188986,e\d\ed44cedf739ba3d7b3986a1f50a3f3423c003967
+w
+G.idea/sonarlint/issuestore/0/7/07bb6179560591d86556023b41e99803ce188986,b\9\b9c948a4dfdd1c0627ac337be08a6fd42588ecfd
+Å
+Q.idea/sonarlint/securityhotspotstore/f/5/f578b6a9dcf1b35106a0ab60756aad6d97fe9ead,d\e\de9ff6595431b2d483bf9668704449a63f09f40f
+Å
+Q.idea/sonarlint/securityhotspotstore/a/3/a3a88a256afb98d65927d8a255b111c04f01f454,9\d\9d8bb87813805db89027741c0fad87e6c6a58511
+w
+G.idea/sonarlint/issuestore/f/5/f578b6a9dcf1b35106a0ab60756aad6d97fe9ead,d\7\d7316d89627abe68aabe88a3dfca787f243dab7a
+w
+G.idea/sonarlint/issuestore/a/3/a3a88a256afb98d65927d8a255b111c04f01f454,9\0\9056302198a5d037eebf739521a2c380978e2faa
