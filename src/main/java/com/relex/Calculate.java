@@ -3,19 +3,19 @@ package com.relex;
 import java.util.Scanner;
 
 public class Calculate {
-    public double calculate(double num1, char operation, double num2, Scanner scan){
+    public double calculate(double num1, String operation, double num2, Scanner scan){
         return switch (operation) {
-            case '+' -> addition(num1, num2);
-            case '-' -> subtraction(num1, num2);
-            case '*' -> multiplication(num1, num2);
-            case '/' -> {
+            case "+" -> addition(num1, num2);
+            case "-" -> subtraction(num1, num2);
+            case "*" -> multiplication(num1, num2);
+            case "/" -> {
                 while (num2 == 0){
                     System.out.println("Xeta: 0-a bölmə mümkün deyil, yenidən daxil edin: ");
                     num2 = scan.nextDouble();
                 }
                 yield division(num1, num2);
             }
-            case '%' -> {
+            case "%" -> {
                 while(num2 == 0) {
                     System.out.println("Xeta: 0-a bölmə mümkün deyil, yenidən daxil edin: ");
                     num2 = scan.nextDouble();
