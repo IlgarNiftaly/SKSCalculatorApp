@@ -9,46 +9,73 @@ public class App1 {
         System.out.println("Welcome Calculator App");
         System.out.println("existing operation: +, -, *, /, %");
         Scanner scan = new Scanner(System.in);
+
         while(true){
+            Thread inputThread = new Thread(() -> {
+                try {
+                    StringBuilder input = new StringBuilder();
+                    input.append(scan.nextLine().toLowerCase().replaceAll("\\s+", ""));
+                    StringBuilder operation = new StringBuilder("+");
+                    StringBuilder num = new StringBuilder("0");
 
-            StringBuilder input = new StringBuilder();
-            input.append(scan.nextLine().toLowerCase().replaceAll("\\s+", ""));
-            StringBuilder operation = new StringBuilder("+");
-            StringBuilder num = new StringBuilder("0");
+                    try {
+                        checkOperation(input);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    App1 app1 = new App1();
 
-            checkOperation(input);
-            App1 app1 = new App1();
+                    int i = 0;
+                    while (i < input.length()) {
+                        operation.append("+");
+                        num.append("0");
 
-            int i = 0;
-            while(i < input.length()){
-                operation.append("+");
-                num.append("0");
-
-                if(!Character.isDigit(input.charAt(i))){
-                    operation.delete(0, operation.length());
-                    while (i < input.length() && !Character.isDigit(input.charAt(i))){
-                        if(operation.length() > 1  && input.charAt(i) == '+'){
-                            break;
+                        if (!Character.isDigit(input.charAt(i))) {
+                            operation.delete(0, operation.length());
+                            while (i < input.length() && !Character.isDigit(input.charAt(i))) {
+                                if (operation.length() > 1 && input.charAt(i) == '+') {
+                                    break;
+                                }
+                                operation.append(input.charAt(i));
+                                i++;
+                            }
                         }
-                        operation.append(input.charAt(i));
-                        i++;
-                    }
-                }
-                if(Character.isDigit(input.charAt(i))){
-                    num.delete(0, num.length());
-                    while (i < input.length() && Character.isDigit(input.charAt(i))){
-                        num.append(input.charAt(i));
-                        i++;
-                    }
-                }
-                checkOperation(operation);
-                result = app1.calculate(operation, Integer.parseInt(num.toString()));
+                        if (Character.isDigit(input.charAt(i))) {
+                            num.delete(0, num.length());
+                            while (i < input.length() && Character.isDigit(input.charAt(i))) {
+                                num.append(input.charAt(i));
+                                i++;
+                            }
+                        }
+                        try {
+                            checkOperation(operation);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        result = app1.calculate(operation, Integer.parseInt(num.toString()));
 
-                operation.delete(0, operation.length());
-                num.delete(0, num.length());
+                        operation.delete(0, operation.length());
+                        num.delete(0, num.length());
+                    }
+                    System.out.println("result: " + result);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+
+            inputThread.start();
+
+            try {
+                inputThread.join(10_000); // 10 saniyə gözləyir
+                if (inputThread.isAlive()) {
+                    System.out.println("\nVaxt bitdi! Proqram bağlanır...");
+                    System.exit(0);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            System.out.println("result: " + result);
         }
+
 
     }
 
