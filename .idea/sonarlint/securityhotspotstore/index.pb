@@ -1,6 +1,4 @@
 
-Q
-!src/main/java/com/relex/Main.java,d\9\d9577083eb94db7b7544e84ce10de580693ccc40
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 V
@@ -16,8 +14,6 @@ G.idea/sonarlint/issuestore/d/9/d9577083eb94db7b7544e84ce10de580693ccc40,e\3\e3
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-Q
-!src/main/java/com/relex/Test.java,f\5\f578b6a9dcf1b35106a0ab60756aad6d97fe9ead
 Q
 !src/main/java/com/relex/App1.java,a\3\a3a88a256afb98d65927d8a255b111c04f01f454
 Q

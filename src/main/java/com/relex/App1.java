@@ -23,6 +23,7 @@ public class App1 {
             while(i < input.length()){
 
                 if(!Character.isDigit(input.charAt(i))){
+                    operation.delete(0, operation.length());
                     while (i < input.length() && !Character.isDigit(input.charAt(i))){
                         operation.append(input.charAt(i));
                         i++;
@@ -34,7 +35,7 @@ public class App1 {
                         i++;
                     }
                 }
-
+                checkOperation(input.toString());
                 result = app1.calculate(operation.toString(), Integer.parseInt(num.toString()));
 
                 operation.delete(0, operation.length());
@@ -51,7 +52,8 @@ public class App1 {
         }
 
         if(operation.contains("q")){
-            System.out.println("sonlandir");
+            System.out.println("Proqram sonlandirildi");
+            System.exit(0);
         }
     }
 
